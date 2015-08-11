@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div id="customerModule">
+        <h1>CUSTOMER</h1>
+        <button id="print">Print Customers</button>
+        <br>
+        <br>
+        <br>
+        <input type="text" id="search">
+        <br>
+        <br>
+        <br>
+        <button id="search-button">Search Customers</button>
+        <br>
+        <ul id="customer">
+            <script id="customer-template" type="text/template">
+                {{#customer}}
+                <li>
+                    <span>{{Name}}</span>
+                    <span>{{City}}</span>
+                    <span>{{Country}}</span>
+                </li>
+                {{/customer}}
+            </script>
+        </ul>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/mustache.js"></script>
+    <script type="text/javascript" src="js/sample2.js"></script>
+</body>
+
+</html>

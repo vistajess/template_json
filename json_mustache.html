@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Titles</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div id="customer">
+        <div id="customer-container"></div>
+    </div>
+    <script id="customerstpl" type="text/template">
+        {{#customer}}
+        <div class="customer">
+            <h3>Name : {{Name}}</h3>
+            <p>{{City}}</p>
+        </div>
+        {{/customer}}
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/mustache.js"></script>
+    <script type="text/javascript">
+    $(function() {
+
+        $.getJSON('js/customer.json', function(data) {
+            var template = $('#customerstpl').html();
+            var html = Mustache.to_html(template, data);
+            $('#customer-container').html(html);
+        });
+    });
+    </script>
+</body>
+
+</html>

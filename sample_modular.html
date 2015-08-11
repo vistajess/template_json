@@ -1,0 +1,33 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <div id="peopleModule">
+        <h1>People</h1>
+        <input placeholder="name" type="text">
+        <button id="addPerson">Add Person</button>
+        <ul id="people">
+            <script id="people-template" type="text/template">
+                {{#people}}
+                <li>
+                    <span>{{.}}</span>
+                    <i class="del">X</i>
+                </li>
+                {{/people}}
+            </script>
+        </ul>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/mustache.js"></script>
+<script type="text/javascript" src="js/main.js">
+</script>
+</script>
+
+</html>
