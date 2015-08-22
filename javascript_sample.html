@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="myModule">
+        <input type="text" name="search" class="search-input">
+        <br>
+        <button>CLICK ME</button>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/mustache.js"></script>
+    <!--  
+    <script type="text/javascript" src="js/object_sample.js"></script>-->
+    <script type="text/javascript">
+    // alert(this);
+    var myobject = {
+        myArray: [],
+        myName: "Jess",
+        x: 'OH YEAH',
+        this_object: function() {
+            console.log(this);
+        },
+        cacheDOM: function() {
+            this.myModule = document.querySelector('.myModule');
+            this.myBtn = document.querySelector('button');
+            this.myInput = document.querySelector('input');
+
+        },
+        bindEvents: function() {
+            console.log(this.myBtn);
+            this.myBtn.addEventListener('click', this.returnValue.bind(this));
+        },
+        returnValue: function(input) {
+            var text = this.myInput.value;
+            console.log(input);
+        },
+        push_array: function() {
+            for (var i = 0; i <= this.myName.length; i++) {
+                var obj = {
+                    'number': i
+                }
+                this.myArray.push(obj);
+                console.log(i);
+            }
+            var innerfunction = function() {
+                var x = 0
+                console.log(this.x);
+            }.bind(this);
+            innerfunction();
+        },
+        printArray: function() {
+            console.log(this.myArray);
+        }
+
+
+    }
+    myobject.cacheDOM();
+    myobject.bindEvents();
+    myobject.this_object();
+    myobject.push_array();
+    myobject.printArray();
+    </script>
+</body>
+
+</html>
